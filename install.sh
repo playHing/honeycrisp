@@ -73,12 +73,6 @@ do
   cp /root/test/$EX.mpc Programs/$EX
 done
 
-cd /root/config
-for x in chooseSubset.py renameShare.sh genSetupMSP.sh
-do 
-	mkdir config/
-	cp $x config/$x
-done
 
 # add simple syntax highlighting
 cd

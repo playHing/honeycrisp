@@ -29,8 +29,8 @@ do
   ./Player.x $i Programs/decrypt > /dev/null 2> /dev/null &
 done
 
-time ( cat publicin.txt | ./Player.x  $(($N_PLAYERS - 1)) Programs/decrypt > /dev/null 2> /dev/null ) 
+time ( cat publicin.txt | ./Player.x  $(($N_PLAYERS - 1)) Programs/decrypt ) 
 
 
 COMM_T1=$(cat /proc/net/dev | grep -o lo..\[0-9]\* | grep -o \[0-9\]*)
-echo 'Communication Cost (bytes):' $(($COMM_T1 - $COMM_T0))
+echo 'Communication Cost (bytes):' $COMM_T1 '-' $COMM_T0
